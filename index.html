@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <title>Project AQI - Air Quality in the US</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="./src/theme.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h1 class="title">Project AQI: How's the air in the US doing?</h1>
+        <p class="subtitle">
+          Taking a look at America's AQI trend from 1980, its more recently on-the-rise PM2.5 pollutant, and any disparity in accessing clean air.
+        </p>
+        <p>
+          Home to a population of 2.6 million (2023), Chicago makes itself known as the largest city in the Midwest, boasting of opportunities, diversity, and big-city glamour. However, while its reputation for high crime rate is equally matched, Chicago's deeply rooted history of segregation is much lesser known but to dwellers of the city, yet plays an important role in shaping its economic and development landscape. Using data from the Urban Institute, the article seeks to address this issue by means of presenting investment flow in different communities or neighborhoods in Chicago, thus highlighting how this plays out as the most fundamental cause to the city's persisting racial and ethnic disparities.
+        </p>
+        <hr />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h1 class="title is-5" id="point1">Understanding the Data</h1>
+        <p>
+          Until recently, income had been the primary criterion by which social program benefits and public funding were allocated in the United States. This approach presumed that financial disadvantage was the dominant indicator of inequality. However, policymakers are now recognizing that material inequality is also deeply shaped by environmental injustice: some communities bear a disproportionate share of environmental burdens borne little by them. In response, many states are transitioning to a new framework for welfare and policy benchmarking: Disadvantaged Community (DAC) criteria.
+        </p>
+
+        <br>
+
+        <p>
+          At the heart of this shift lies an acknowledgment that climate change and environmental hazards do not impact all communities equally. Factors such as race, geography, and historic patterns of underinvestment contribute to certain populations being systematically more vulnerable to environmental harms—including air pollution, which remains one of the most pervasive and insidious risks to public health. This mini-project explores the relationship between air pollution and community disparities in the U.S., focusing specifically on two globally recognized indicators of air quality: Air Quality Index (AQI) and Particulate Matter 2.5 micrometers or smaller (PM2.5).
+        </p>
+
+        <br>
+
+        <h2 class="title is-5" id="point2">Terminologies</h2>
+        <p>
+          AQI is a standardized index used to communicate the level of air pollution to the public. It converts complex data about multiple pollutants into a single, easily understandable number on a scale from 0 to 500, where lower values indicate healthier air and higher values indicate dangerous pollution levels. An AQI of 0–50 is considered “Good,” while values over 100 indicate unhealthy conditions for sensitive groups, and values over 150 are unhealthy for the general population. In the U.S., AQI typically accounts for five key pollutants regulated under the Clean Air Act: ground-level ozone (O₃), particulate matter (both PM10 and PM2.5), carbon monoxide (CO), sulfur dioxide (SO₂), and nitrogen dioxide (NO₂).
+        </p>
+
+        <br>
+
+        <p>
+          PM2.5, on the other hand, refers to fine inhalable particles with diameters of 2.5 micrometers or smaller. Due to their small size, these particles can penetrate deep into the lungs and even enter the bloodstream, causing cardiovascular, respiratory, and neurological damage. PM2.5 is one of the most dangerous components of air pollution because it is linked to premature death, chronic disease, and developmental impacts. It is produced by combustion processes such as vehicle emissions, industrial operations, and wildfires, and its presence in the air is closely monitored worldwide.
+        </p>
+
+        <br>
+
+        <h2 class="title is-5" id="point3">Air Quality Through the Graphs</h2>
+        <p>
+          Overall national air quality has improved since 1980. The average AQI decreased steadily from 53 to 42 over this period.
+        </p>
+
+        <!-- Graph Embed -->
+        <div class="columns is-centered">
+          <div class="column is-three-quarters" id="topCities"></div>
+        </div>
+
+        <script type="text/javascript">
+          vegaEmbed("#topCities", "https://raw.githubusercontent.com/mngh037/chicago-invest-flow/refs/heads/main/visualizations/top_cities.json");
+        </script>
+
+        <section class="section">
+            <div class="container is-max-desktop has-text-centered">
+                <img src="criteria_gases.png" alt="Criteria Gases Chart">
+                <p class="is-size-6 has-text-grey">Figure: Contribution of different criteria gases to AQI</p>
+            </div>
+        </section>
+
+        <p>
+          However, this national average conceals significant local variation. 58.44% of U.S. counties recorded in the dataset experienced an overall worsening trend in AQI during certain years. Moreover, while average AQI has improved, peak daily AQI levels remain volatile, with some regions continuing to exceed healthy thresholds.
+        </p>
+
+        <p>
+          Unhealthy air quality days (defined as AQI ≥ 101) have declined notably from an average of 34 days in 1980 to just 3 days in 2024. This reflects two structural trends: the U.S. has moved beyond its peak industrialization phase, and cleaner technologies and regulations have likely improved air quality in major cities.
+        </p>
+
+        <p>
+          In terms of income, no strong patterns emerged. However, racial disparities in air quality exposure appeared suggestive: while White-majority counties exhibited wide variability (both high and low AQI outliers), Black- and Asian-majority counties showed an overall higher AQI range, albeit still below officially unhealthy thresholds.
+        </p>
+
+        <p>
+          Among the criteria pollutants, PM2.5 demonstrated the most dramatic changes. Virtually absent in monitoring data from the 1990s (likely due to lack of measurement infrastructure), PM2.5 is now a dominant contributor to AQI levels. A concerning upward trend in its yearly average since 2019 suggests that wildfires, transportation, and secondary aerosols remain persistent sources of fine particulate pollution.
+        </p>
+
+        <p>
+          There is still much room for further exploration in this area. While this project offers hints at potential disparities in air pollution exposure, more granular data and refined modeling techniques are needed to make robust causal inferences about race, income, and pollution burdens. Moreover, future work should extend into more computationally intensive domains, such as health outcome modeling: Can we predict and quantify morbidity and mortality risks based on pollution levels? How do demographic characteristics modulate the health impacts of exposure?
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container is-max-widescreen">
+        <div class="columns">
+          <div class="column is-two-thirds content has-text-left">
+            <p>
+              Data Source: <strong>United States Environmental Protection Agency</strong>. 2024. <a href="https://aqs.epa.gov/aqsweb/airdata/download_files.html">Pre-generated Data File</a>.
+            </p>
+            <p>
+              Webpage: built with <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+              The source code is licensed <a href="https://opensource.org/license/mit">MIT</a>. The website content is licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>
+            </p>
+          </div>
+          <div class="column content has-text-right">
+            <p>
+              Code, Page Design, and Analysis by <a href="mailto:mnghiem@uchicago.edu">Minh Nghiem</a>
+            </p>
+            <p>
+              <a href="https://github.com/mngh037">GitHub</a> | <a href="https://www.linkedin.com/in/minhhnghiem/">LinkedIn</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
