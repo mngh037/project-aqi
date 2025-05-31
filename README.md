@@ -34,5 +34,5 @@ There is much room for further exploration in this area. While this project offe
 ## Replicating the code
 Open `index.html` with the browser to view the summary of findings.
 To replicate the process to build the visualization:
-- First, run `python get_data.py` from the terminal to download all the data.
+- First, run `python get_data.py <your-CNETID>` from the terminal to download all the data.
 - Run `analysis.ipynb`
