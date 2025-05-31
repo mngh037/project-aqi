@@ -1,12 +1,16 @@
 import os
+import sys
 import requests
 import zipfile
 
-CNETID = "mnghiem"
+if len(sys.argv) < 2:
+    print("1 argument for CNETID required. Format: python script.py <CNETID>")
+    sys.exit(1)
+
+CNETID = sys.argv[1]
 root = f"/scratch/midway3/{CNETID}/project-aqi-data/"
 
 def get_data(base_url, file):
-    base_url = "https://aqs.epa.gov/aqsweb/airdata/"
     download_dir = root + "downloads"
 
     if file == "aqi":
@@ -46,6 +50,6 @@ def get_data(base_url, file):
             print(f"Failed to download {filename} — Status code: {response.status_code}")
 
 if __name__ == "__main__":
-    get_data("https://aqs.epa.gov/aqsweb/airdata/", "aqi")
-    get_data("https://aqs.epa.gov/aqsweb/airdata/", "pm25")
-    
+    base_url = "https://aqs.epa.gov/aqsweb/airdata/"
+    get_data(base_url, "aqi")
+    get_data(base_url, "pm25")
