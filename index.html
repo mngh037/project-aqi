@@ -6,7 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <title>Project AQI - Air Quality in the US</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
     <link rel="stylesheet" href="./src/theme.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,10 +14,9 @@
   </head>
 
   <body>
-    <!-- Header Section -->
     <section class="section">
       <div class="container is-max-desktop">
-        <h1 class="title">Project AQI: How's the air in the US doing?</h1>
+        <h1 class="title" style="color: rgb(27, 102, 223)">Project AQI: How's the air in the US doing?</h1>
         <p class="subtitle">
           Taking a look at America's AQI trend from 1980, its more recently on-the-rise PM2.5 pollutant, and any disparity in accessing clean air.
         </p>
@@ -31,7 +29,7 @@
 
     <section class="section">
       <div class="container is-max-desktop">
-        <h1 class="title is-5" id="point1">Understanding the Data</h1>
+        <h1 class="title is-5" id="point1" style="color: rgb(27, 102, 223)">Understanding the Data</h1>
         <p>
           Until recently, income had been the primary criterion by which social program benefits and public funding were allocated in the United States. This approach presumed that financial disadvantage was the dominant indicator of inequality. However, policymakers are now recognizing that material inequality is also deeply shaped by environmental injustice: some communities bear a disproportionate share of environmental burdens borne little by them. In response, many states are transitioning to a new framework for welfare and policy benchmarking: Disadvantaged Community (DAC) criteria.
         </p>
@@ -57,24 +55,19 @@
 
         <br>
 
-        <h2 class="title is-5" id="point3">Air Quality Through the Graphs</h2>
+        <h2 class="title is-5" id="point3" style="color: rgb(27, 102, 223)">Air Quality Through the Graphs</h2>
         <p>
           Overall national air quality has improved since 1980. The average AQI decreased steadily from 53 to 42 over this period.
         </p>
 
-        <!-- Graph Embed -->
         <div class="columns is-centered">
           <div class="column is-three-quarters" id="topCities"></div>
         </div>
 
-        <script type="text/javascript">
-          vegaEmbed("#topCities", "https://raw.githubusercontent.com/mngh037/chicago-invest-flow/refs/heads/main/visualizations/top_cities.json");
-        </script>
-
         <section class="section">
             <div class="container is-max-desktop has-text-centered">
-                <img src="criteria_gases.png" alt="Criteria Gases Chart">
-                <p class="is-size-6 has-text-grey">Figure: Contribution of different criteria gases to AQI</p>
+                <img src="./visualizations/yearly_aqi.png" alt="AQI Line Chart">
+                <p class="is-size-6 has-text-grey">Figure: Average US AQI 1980-2024</p>
             </div>
         </section>
 
@@ -86,21 +79,53 @@
           Unhealthy air quality days (defined as AQI ≥ 101) have declined notably from an average of 34 days in 1980 to just 3 days in 2024. This reflects two structural trends: the U.S. has moved beyond its peak industrialization phase, and cleaner technologies and regulations have likely improved air quality in major cities.
         </p>
 
+        <div class="columns is-centered">
+          <div class="column is-three-quarters" id="topCities"></div>
+        </div>
+
+        <section class="section">
+            <div class="container is-max-desktop has-text-centered">
+                <img src="./visualizations/year_unhealthy_aqi.png" alt="Unhealthy Days Bar Chart">
+                <p class="is-size-6 has-text-grey">Figure: US days with AQI of 101 or over 1980-2024</p>
+            </div>
+        </section>
+
         <p>
           In terms of income, no strong patterns emerged. However, racial disparities in air quality exposure appeared suggestive: while White-majority counties exhibited wide variability (both high and low AQI outliers), Black- and Asian-majority counties showed an overall higher AQI range, albeit still below officially unhealthy thresholds.
         </p>
+
+        <div class="columns is-centered">
+          <div class="column is-three-quarters" id="topCities"></div>
+        </div>
+
+        <section class="section">
+            <div class="container is-max-desktop has-text-centered">
+                <img src="./visualizations/aqi_by_race.png" alt="AQI by race">
+                <p class="is-size-6 has-text-grey">Figure: Average AQI by race 1980-2024</p>
+            </div>
+        </section>
 
         <p>
           Among the criteria pollutants, PM2.5 demonstrated the most dramatic changes. Virtually absent in monitoring data from the 1990s (likely due to lack of measurement infrastructure), PM2.5 is now a dominant contributor to AQI levels. A concerning upward trend in its yearly average since 2019 suggests that wildfires, transportation, and secondary aerosols remain persistent sources of fine particulate pollution.
         </p>
 
+        <div class="columns is-centered">
+          <div class="column is-three-quarters" id="topCities"></div>
+        </div>
+
+        <section class="section">
+            <div class="container is-max-desktop has-text-centered">
+                <img src="./visualizations/criteria_gases.png" alt="Criteria Gases Chart">
+                <p class="is-size-6 has-text-grey">Figure: Criteria gas as main contribution of daily AQI</p>
+            </div>
+        </section>
+
         <p>
-          There is still much room for further exploration in this area. While this project offers hints at potential disparities in air pollution exposure, more granular data and refined modeling techniques are needed to make robust causal inferences about race, income, and pollution burdens. Moreover, future work should extend into more computationally intensive domains, such as health outcome modeling: Can we predict and quantify morbidity and mortality risks based on pollution levels? How do demographic characteristics modulate the health impacts of exposure?
+          There is still much room for further exploration in this area. While this project offers hints at potential disparities in air pollution exposure, more granular data and refined modeling techniques are needed to make robust causal inferences about race, income, and pollution burdens. Moreover, future work should extend into more computationally intensive domains, such as health outcome modeling: Can we predict and quantify morbidity and mortality risks based on pollution levels? How are different demographics experiencing the health impacts of exposure?
         </p>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container is-max-widescreen">
         <div class="columns">
