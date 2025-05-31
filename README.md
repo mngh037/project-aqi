@@ -18,7 +18,7 @@ The project workflow consisted of three stages:
 2. Data Exploration and Analysis: Conducted in a Jupyter Notebook to ensure reproducibility and transparency of the analysis pipeline.
 3. Data Visualization: Outputs presented as a HTML webpage, though the project fell short of the goal of operationalizing the process into a fully deployable command-line app, due to time constraints.
 
-Despite these limitations, the project yielded some noteworthy findings:
+Despite these limitations, the project had some findings of its own:
 - Overall national air quality has improved since 1980. The average AQI decreased steadily from 53 to 42 over this period.
 
 ![US air quality 1980-2024](./visualizations/yearly_aqi.png)
@@ -29,7 +29,7 @@ Despite these limitations, the project yielded some noteworthy findings:
 ![AQI by race](./visualizations/aqi_by_race.png)
 - Among the criteria pollutants, PM2.5 demonstrated the most dramatic changes. Virtually absent in monitoring data from the 1990s (likely due to lack of measurement infrastructure), PM2.5 is now a dominant contributor to AQI levels. A concerning upward trend in its yearly average since 2019 suggests that wildfires, transportation, and secondary aerosols remain persistent sources of fine particulate pollution.
 
-There is still much room for further exploration in this area. While this project offers hints at potential disparities in air pollution exposure, more granular data and refined modeling techniques are needed to make robust causal inferences about race, income, and pollution burdens. Moreover, future work should extend into more computationally intensive domains, such as health outcome modeling: Can we predict and quantify morbidity and mortality risks based on pollution levels? How do demographic characteristics modulate the health impacts of exposure?
+There is much room for further exploration in this area. While this project offers hints at potential disparities in air pollution exposure, more granular data and refined modeling techniques are needed to make robust causal inferences about race, income, and pollution burdens. Moreover, future work should extend into more computationally intensive domains, such as health outcome modeling: can we predict and quantify morbidity and mortality risks based on pollution levels? How do demographic characteristics modulate the health impacts of exposure?
 
 ## Replicating the code
 Open `index.html` with the browser to view the summary of findings.
