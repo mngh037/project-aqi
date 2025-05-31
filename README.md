@@ -20,10 +20,12 @@ The project workflow consisted of three stages:
 
 Despite these limitations, the project yielded some noteworthy findings:
 - Overall national air quality has improved since 1980. The average AQI decreased steadily from 53 to 42 over this period.
+
 ![US air quality 1980-2024](./visualizations/yearly_aqi.png)
 - However, this national average conceals significant local variation. 58.44% of U.S. counties recorded in the dataset experienced an overall worsening trend in AQI during certain years. Moreover, while average AQI has improved, peak daily AQI levels remain volatile, with some regions continuing to exceed healthy thresholds.
 - Unhealthy air quality days (defined as AQI ≥ 101) have declined notably from an average of 34 days in 1980 to just 3 days in 2024. This reflects two structural trends: the U.S. has moved beyond its peak industrialization phase, and cleaner technologies and regulations have likely improved air quality in major cities.
 - In terms of income, no strong patterns emerged. However, racial disparities in air quality exposure appeared suggestive: while White-majority counties exhibited wide variability (both high and low AQI outliers), Black- and Asian-majority counties showed an overall higher AQI range, albeit still below officially unhealthy thresholds.
+
 ![AQI by race](./visualizations/aqi_by_race.png)
 - Among the criteria pollutants, PM2.5 demonstrated the most dramatic changes. Virtually absent in monitoring data from the 1990s (likely due to lack of measurement infrastructure), PM2.5 is now a dominant contributor to AQI levels. A concerning upward trend in its yearly average since 2019 suggests that wildfires, transportation, and secondary aerosols remain persistent sources of fine particulate pollution.
 
